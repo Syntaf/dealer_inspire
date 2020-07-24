@@ -10,12 +10,6 @@ services:
       - /srv/dealer_inspire/vendor
     ports:
       - "9999:9999"
-    environment:
-      DB_HOST: db
-      DB_PORT: 3306
-      DB_DATABASE: dealer_inspire
-      DB_USERNAME: dev
-      DB_PASSWORD: dev
     depends_on:
       - db
 
@@ -25,7 +19,8 @@ services:
       - "3306:3306"
     environment:
       MYSQL_DATABASE: dealer_inspire
-      MYSQL_ROOT_PASSWORD: dev
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
     volumes:
       - dealer_inspire_mysql:/var/lib/mysql
       # - ./database/initializers/my.cnf:/etc/mysql/my.cnf
