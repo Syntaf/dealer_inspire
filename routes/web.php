@@ -13,6 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', '/contact');
-
-Route::get('contact', 'Contact@index');
+Route::get('/', 'HomeController@index');

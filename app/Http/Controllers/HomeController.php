@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Contact extends Controller
+class HomeController extends Controller
 {
     /**
      * Handle the incoming request.
@@ -14,6 +14,6 @@ class Contact extends Controller
      */
     public function index(Request $request)
     {
-        return view('contact.index');
+        return view('home.index');
     }
 }
