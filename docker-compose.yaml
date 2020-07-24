@@ -23,7 +23,6 @@ services:
       MYSQL_PASSWORD: dev
     volumes:
       - dealer_inspire_mysql:/var/lib/mysql
-      # - ./database/initializers/my.cnf:/etc/mysql/my.cnf
 
 volumes:
   dealer_inspire_mysql:
