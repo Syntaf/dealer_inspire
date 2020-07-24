@@ -55,27 +55,27 @@
                 <h2>Contact Guy Smiley</h2>
                 <p>Remember Guy Smiley?  Yeah, he wants to hear from you.</p>
                 <div class="card">
-                    <form method="POST" class="container-fluid" id="contact-form" action="/contact">
+                    <form method="POST" id="contact-form" action="/contact">
                         @csrf
 
-                        <div class="col-xs-12 input-group">
+                        <div class="col-xs-12 input-group" data-role="name">
                             <label for="name" class="pull-left">Full Name<sup class="text-danger">*</sup></label>
                             <input type="text" name="name" class="form-control" />
                         </div>
-                        <div class="col-xs-12 input-group">
+                        <div class="col-xs-12 input-group" data-role="email">
                             <label for="email" class="pull-left">Email Address<sup class="text-danger">*</sup></label>
                             <input type="email" name="email" class="form-control" />
                         </div>
-                        <div class="col-xs-12 input-group">
+                        <div class="col-xs-12 input-group" data-role="phone_number">
                             <label for="phone" class="pull-left">Phone Number</label>
                             <input type="text" name="phone_number" class="form-control" />
                         </div>
-                        <div class="col-xs-12 text-area input-group">
+                        <div class="col-xs-12 text-area input-group" data-role="message">
                             <label for="message" class="pull-left">Message<sup class="text-danger">*</sup></label>
                             <textarea class="form-control" name="message" rows="3" placeholder="message"></textarea>
                         </div>
 
-                        <input class="btn btn-default" type="submit" value="Submit">
+                        <input class="btn btn-primary" type="submit" value="Submit">
                     </form>
                 </div>
             </div>
