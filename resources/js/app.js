@@ -36,7 +36,15 @@ class FormController
     }
 
     handleFailure (res) {
-        console.log(res.responseJSON);
+        const response = res.responseJSON;
+
+        if  ('errors' in response) {
+            $.each(response.errors, this.setValidationState.bind(this));
+        }
+    }
+
+    setValidationState (errorName, errorMessage) {
+        $('.input-group[data-role="' + errorName + '"]').addClass('has-error');
     }
 }
 
