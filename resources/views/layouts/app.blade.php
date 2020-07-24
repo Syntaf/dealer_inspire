@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
+        <title>Dealer Inspire Code Challenge</title>
 
         <script src="{{ asset('js/app.js') }}"></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -41,18 +42,13 @@
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-
-        <title>Dealer Inspire Code Challenge</title>
     </head>
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+        <x-header />
+
         @yield('content');
 
-        <!-- Footer -->
-        <footer>
-            <div class="container text-center">
-                <p><small>Copyright 2018 Dealer Inspire</small></p>
-            </div>
-        </footer>
+        <x-footer />
 
         @yield('endofbody')
     </body>
