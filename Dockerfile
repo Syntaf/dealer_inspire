@@ -2,7 +2,7 @@ FROM php:7.4-fpm
 
 WORKDIR /srv/dealer_inspire/
 
-# Install dependencies
+# Install core dependencies
 RUN apt-get update && apt-get install -y \
     build-essential \
     gnupg2 \
@@ -19,6 +19,12 @@ RUN apt-get update && apt-get install -y \
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# Install node & npm
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    apt-get install -yq nodejs
+RUN npm install -g npm
+
+# Install zip extension dependencies
 RUN echo "deb http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list
 RUN echo "deb-src http://packages.dotdeb.org jessie all" >> /etc/apt/sources.list
 RUN curl -sS --insecure https://www.dotdeb.org/dotdeb.gpg | apt-key add -
