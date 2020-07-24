@@ -54,9 +54,30 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contact Guy Smiley</h2>
                 <p>Remember Guy Smiley?  Yeah, he wants to hear from you.</p>
-                <p class="bg-primary">
-                    [[ This is where you'd put your contact form.  Get it done! ]]
-                </p>
+                <div class="card">
+                    <form method="POST" class="container-fluid" action="/contact">
+                        @csrf
+
+                        <div class="col-xs-12 input-group">
+                            <label for="name" class="pull-left">Full Name<sup class="text-danger">*</sup></label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xs-12 input-group">
+                            <label for="email" class="pull-left">Email Address<sup class="text-danger">*</sup></label>
+                            <input type="email" class="form-control" />
+                        </div>
+                        <div class="col-xs-12 input-group">
+                            <label for="phone" class="pull-left">Phone Number</label>
+                            <input type="text" class="form-control" />
+                        </div>
+                        <div class="col-xs-12 text-area input-group">
+                            <label for="message" class="pull-left">Message<sup class="text-danger">*</sup></label>
+                            <textarea class="form-control" rows="3" placeholder="message"></textarea>
+                        </div>
+
+                        <input class="btn btn-default" type="submit" value="Submit">
+                    </form>
+                </div>
             </div>
         </div>
     </section>
