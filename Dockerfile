@@ -47,4 +47,4 @@ RUN chown -R www-data:www-data /srv/dealer_inspire
 
 # Expose port 9999 and start php simple server to adhere to coding test guidelines
 EXPOSE 9999
-CMD ["php", "-S", "0.0.0.0:9999", "-t", "public"]
+CMD ["php", "artisan", "server", "--host", "0.0.0.0", "--port", "9999"]
