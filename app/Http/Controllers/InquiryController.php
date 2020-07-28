@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Inquiry;
+use App\Jobs\EmailInquiry;
 
-class ContactController extends Controller
+use Illuminate\Support\Facades\Log;
+
+class InquiryController extends Controller
 {
     /**
      * Validates and creates a new contact entity.
@@ -15,6 +18,9 @@ class ContactController extends Controller
         $inquiry = new Inquiry();
 
         $inquiry->fill($request->all());
-        $inquiry->save();
+        
+        if ($inquiry->save()) {
+            EmailInquiry::dispatch($inquiry);
+        }
     }
 }
