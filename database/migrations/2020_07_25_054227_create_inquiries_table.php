@@ -13,7 +13,7 @@ class CreateInquiriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('inquries', function (Blueprint $table) {
+        Schema::create('inquiries', function (Blueprint $table) {
             $table->id();
             $table->string('full_name');
             $table->string('email');
