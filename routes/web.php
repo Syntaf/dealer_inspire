@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@index');
 
-Route::post('/contact', 'ContactController@create');
+Route::post('/inquiry', 'InquiryController@create');

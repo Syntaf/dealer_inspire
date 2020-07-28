@@ -55,7 +55,7 @@
                 <h2>Contact Guy Smiley</h2>
                 <p>Remember Guy Smiley?  Yeah, he wants to hear from you.</p>
                 <div class="card">
-                    <form method="POST" id="contact-form" action="/contact">
+                    <form method="POST" id="contact-form" action="/inquiry">
                         @csrf
 
                         <div class="col-xs-12 input-group" data-role="full_name">
