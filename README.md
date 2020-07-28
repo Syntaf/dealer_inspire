@@ -1,23 +1,18 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+ ```
+  _____             _             _____                 _          
+ |  __ \           | |           |_   _|               (_)         
+ | |  | | ___  __ _| | ___ _ __    | |  _ __  ___ _ __  _ _ __ ___ 
+ | |  | |/ _ \/ _` | |/ _ \ '__|   | | | '_ \/ __| '_ \| | '__/ _ \
+ | |__| |  __/ (_| | |  __/ |     _| |_| | | \__ \ |_) | | | |  __/
+ |_____/ \___|\__,_|_|\___|_|    |_____|_| |_|___/ .__/|_|_|  \___|
+                                                 | |               
+                                                 |_|            
+```
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## About
 
-## About Laravel
-
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
-
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This coding project was built using Laravel, PHP 7.3, MySql, and Docker. A homepage is displayed
+and a contact form is rendered near the bottom. Submitting a valid name, email, message, and optionally a phone number will create an inquiry which is emailed to the user and saved in the database.
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
