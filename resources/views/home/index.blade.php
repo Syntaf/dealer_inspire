@@ -58,9 +58,9 @@
                     <form method="POST" id="contact-form" action="/contact">
                         @csrf
 
-                        <div class="col-xs-12 input-group" data-role="name">
-                            <label for="name" class="pull-left">Full Name<sup class="text-danger">*</sup></label>
-                            <input type="text" name="name" class="form-control" />
+                        <div class="col-xs-12 input-group" data-role="full_name">
+                            <label for="full_name" class="pull-left">Full Name<sup class="text-danger">*</sup></label>
+                            <input type="text" name="full_name" class="form-control" />
                         </div>
                         <div class="col-xs-12 input-group" data-role="email">
                             <label for="email" class="pull-left">Email Address<sup class="text-danger">*</sup></label>
