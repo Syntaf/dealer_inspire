@@ -4,6 +4,7 @@ class FormController
 {
     constructor(formId) {
         this.$form = $(formId);
+        this.$responseLabel = this.$form.find('[data-role="response"]');
 
         this.initialize();
     }
@@ -32,7 +33,8 @@ class FormController
     }
 
     handleSuccess (_res) {
-        this.$form.find('[data-role="success"]').show();
+        this.$responseLabel.text('Thank you for your submission! You should receive a copy of your inquiry shortly via email.')
+            .show();
     }
 
     handleFailure (res) {
@@ -40,6 +42,9 @@ class FormController
 
         if ('errors' in response) {
             $.each(response.errors, this.setValidationState.bind(this));
+        } else {
+            this.$responseLabel.text('Something went wrong :( please try again')
+                .show();
         }
     }
 

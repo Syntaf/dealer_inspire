@@ -77,9 +77,7 @@
 
                         <input class="btn btn-primary" type="submit" value="Submit">
 
-                        <p class="success-label" data-role="success">
-                            Thank you for your submission! You should receive a copy of your inquiry shortly via email.
-                        </p>
+                        <p class="response-label" data-role="response"></p>
                     </form>
                 </div>
             </div>

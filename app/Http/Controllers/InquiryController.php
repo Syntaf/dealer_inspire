@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Inquiry;
 use App\Mail\InquiryReceived;
+use Exception;
 use Illuminate\Support\Facades\Mail;
 
 class InquiryController extends Controller
@@ -17,16 +18,9 @@ class InquiryController extends Controller
         $inquiry = new Inquiry();
 
         $inquiry->fill($request->all());
-        
-        if (!$inquiry->save()) {
-            return response()->json([
-                'status' => 'error',
-                'message' => 'An unknown error occured, please try again'
-            ]);
-        }
+        $inquiry->save();
 
-        Mail::to($inquiry->email)
-            ->queue(new InquiryReceived($inquiry));
+        Mail::to($inquiry->email)->queue(new InquiryReceived($inquiry));
 
         return response()->json([
             'status' => 'success',
