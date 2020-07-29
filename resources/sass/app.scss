@@ -2,9 +2,9 @@
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
-  background-color: #000;
+  background-color: rgba(128, 128, 128, 0.5);
   color: #fff;
-  padding: 0 15px;
+  padding: 15px;
 
   form {
     flex: 1;
@@ -17,6 +17,10 @@
 
     .input-group {
       margin-top: 5px;
+
+      &.has-error input, textarea {
+        border-width: 2px;
+      }
     }
 
     .btn {
