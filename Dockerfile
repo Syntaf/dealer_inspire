@@ -46,4 +46,4 @@ RUN composer install
 RUN chown -R www-data:www-data /srv/dealer_inspire
 
 EXPOSE 9999
-CMD ["php", "artisan", "server", "--host", "0.0.0.0", "--port", "9999"]
+CMD ["php", "artisan", "serve", "--host", "0.0.0.0", "--port", "9999"]
