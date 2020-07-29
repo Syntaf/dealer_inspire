@@ -13,6 +13,8 @@ class Inquiry extends Model
 
     public function getMessageLinesAttribute()
     {
-        return str_split($this->message, self::DEFAULT_LINE_SIZE);
+        $lines = str_split($this->message, self::DEFAULT_LINE_SIZE);
+
+        return array_map(function ($line) { return trim($line); }, $lines);
     }
 }
