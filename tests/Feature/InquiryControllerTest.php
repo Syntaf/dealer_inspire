@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 use App\Inquiry;
-
+use App\Mail\InquiryReceived;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\Mail;
 
 use Tests\TestCase;
 
@@ -20,6 +20,13 @@ class InquiryControllerTest extends TestCase
         'message' => "Hi, I'd like to inquire about an APIs developer position"
     ];
 
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        Mail::fake();
+    }
+
     public function testCreatesInquiry()
     {
         $response = $this->postJson('/inquiry', self::EXAMPLE_INQUIRY);
@@ -32,6 +39,8 @@ class InquiryControllerTest extends TestCase
         $this->assertEquals(self::EXAMPLE_INQUIRY['email'], $inquiry->email);
         $this->assertEquals(self::EXAMPLE_INQUIRY['phone_number'], $inquiry->phone_number);
         $this->assertEquals(self::EXAMPLE_INQUIRY['message'], $inquiry->message);
+
+        Mail::assertQueued(InquiryReceived::class);
     }
 
     public function testAcceptsEmptyPhoneNumber()
@@ -40,10 +49,11 @@ class InquiryControllerTest extends TestCase
         unset($inquiry['phone_number']);
 
         $response = $this->postJson('/inquiry', $inquiry);
-
         $response->assertStatus(200);
 
         $this->assertCount(1, Inquiry::all());
+
+        Mail::assertQueued(InquiryReceived::class);
     }
 
     /**
@@ -59,6 +69,8 @@ class InquiryControllerTest extends TestCase
         $response->assertStatus(422);
 
         $this->assertEmpty(Inquiry::all());
+
+        Mail::assertNothingQueued();
     }
 
     public function requiredFieldsProvider()
