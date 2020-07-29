@@ -20,12 +20,29 @@ Bundled assets were also commited to this repository to ensure that a simple php
    > cd dealer_inspire
    ```
 
-2. Build the docker image and start the containers
+2. Create a new volume for MySql
+   ```
+   > docker volume create dealer_inspire_mysql
+   ```
+
+3. Build the docker image and run the database migrations
+   ```
+   > docker-compose build
+   > docker-compose run app php artisan migrate
+   ```
+
+3. Bring up the containers and visit http://localhost:9999/
    ```
    > docker-compose up
    ```
 
-3. Visit http://localhost:9999/ and submit an inquiry through the contact form. Don't forget to check the terminal to see the mail being sent through `stderr`!
+4. Submit an inquiry through the contact form and check the terminal to see the mail being sent through `stderr`!
+
+To run tests with Docker, use the following command:
+
+```
+docker-compose run app php artisan test
+```
 
 ## Running locally
 
@@ -37,9 +54,10 @@ While Docker is recommended, to adhere to the challenge requirements one can als
    > cd dealer_inspire
    ```
 
-2. Install dependencies through composer
+2. Install dependencies and run migrations (assuming you have a database available named `dealer_inspire`)
    ```
    > composer install
+   > php artisan migrate
    ```
 
 3. Create a PHP server and visit http://localhost:9999/
