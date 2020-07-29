@@ -25,18 +25,17 @@ Bundled assets were also commited to this repository to ensure that a simple php
    > docker volume create dealer_inspire_mysql
    ```
 
-3. Build the docker image and run the database migrations
-   ```
-   > docker-compose build
-   > docker-compose run app php artisan migrate
-   ```
-
-3. Bring up the containers and visit http://localhost:9999/
+3. Startup the containers
    ```
    > docker-compose up
    ```
 
-4. Submit an inquiry through the contact form and check the terminal to see the mail being sent through `stderr`!
+4. In another terminal, run the migrations then visit http://localhost:9999/
+   ```
+   > docker-compose exec app php artisan migrate
+   ```
+
+5. Submit an inquiry through the contact form and check the terminal to see the mail being sent through `stderr`!
 
 To run tests with Docker, use the following command:
 
