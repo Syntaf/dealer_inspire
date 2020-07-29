@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Mail;
 class InquiryController extends Controller
 {
     /**
-     * Validates and creates a new contact entity.
+     * Validates and creates a new Inquiry entity.
      */
     public function create(ContactRequest $request)
     {
