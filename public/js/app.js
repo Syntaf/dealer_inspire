@@ -19356,6 +19356,7 @@ var FormController = /*#__PURE__*/function () {
     key: "handleSubmit",
     value: function handleSubmit(event) {
       event.preventDefault();
+      this.resetErrors();
       var data = this.$form.serialize();
       var url = this.$form.attr('action');
       this.postForm(url, data).done(this.handleSuccess.bind(this)).fail(this.handleFailure.bind(this));
@@ -19387,8 +19388,15 @@ var FormController = /*#__PURE__*/function () {
     }
   }, {
     key: "setValidationState",
-    value: function setValidationState(errorName, errorMessage) {
-      $('.input-group[data-role="' + errorName + '"]').addClass('has-error');
+    value: function setValidationState(errorName, _errorMessage) {
+      $('div[data-error="' + errorName + '"]').addClass('has-error');
+    }
+  }, {
+    key: "resetErrors",
+    value: function resetErrors() {
+      this.$form.find('div[data-role="group"]').each(function (_key, input) {
+        $(input).removeClass('has-error');
+      });
     }
   }]);
 

@@ -58,19 +58,19 @@
                     <form method="POST" id="contact-form" action="/inquiry">
                         @csrf
 
-                        <div class="col-xs-12 input-group" data-role="full_name">
+                        <div class="col-xs-12 input-group" data-error="full_name" data-role="group">
                             <label for="full_name" class="pull-left">Full Name<sup class="text-danger">*</sup></label>
                             <input type="text" name="full_name" class="form-control" />
                         </div>
-                        <div class="col-xs-12 input-group" data-role="email">
+                        <div class="col-xs-12 input-group" data-error="email" data-role="group">
                             <label for="email" class="pull-left">Email Address<sup class="text-danger">*</sup></label>
                             <input type="email" name="email" class="form-control" />
                         </div>
-                        <div class="col-xs-12 input-group" data-role="phone_number">
+                        <div class="col-xs-12 input-group" data-error="phone_number" data-role="group">
                             <label for="phone" class="pull-left">Phone Number</label>
                             <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="000-000-0000" name="phone_number" class="form-control" />
                         </div>
-                        <div class="col-xs-12 text-area input-group" data-role="message">
+                        <div class="col-xs-12 text-area input-group" data-error="message" data-role="group">
                             <label for="message" class="pull-left">Message<sup class="text-danger">*</sup></label>
                             <textarea class="form-control" name="message" rows="3" placeholder="message"></textarea>
                         </div>

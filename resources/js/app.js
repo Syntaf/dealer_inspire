@@ -15,6 +15,8 @@ class FormController
 
     handleSubmit (event) {
         event.preventDefault();
+        
+        this.resetErrors();
 
         const data = this.$form.serialize();
         const url = this.$form.attr('action');
@@ -48,8 +50,14 @@ class FormController
         }
     }
 
-    setValidationState (errorName, errorMessage) {
-        $('.input-group[data-role="' + errorName + '"]').addClass('has-error');
+    setValidationState (errorName, _errorMessage) {
+        $('div[data-error="' + errorName + '"]').addClass('has-error');
+    }
+
+    resetErrors () {
+        this.$form.find('div[data-role="group"]').each((_key, input) => {
+            $(input).removeClass('has-error');
+        });
     }
 }
 
