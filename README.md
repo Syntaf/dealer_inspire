@@ -1,56 +1,64 @@
- ```
-  _____             _             _____                 _          
- |  __ \           | |           |_   _|               (_)         
- | |  | | ___  __ _| | ___ _ __    | |  _ __  ___ _ __  _ _ __ ___ 
- | |  | |/ _ \/ _` | |/ _ \ '__|   | | | '_ \/ __| '_ \| | '__/ _ \
- | |__| |  __/ (_| | |  __/ |     _| |_| | | \__ \ |_) | | | |  __/
- |_____/ \___|\__,_|_|\___|_|    |_____|_| |_|___/ .__/|_|_|  \___|
-                                                 | |               
-                                                 |_|            
-```
+# Dealer Inspire Coding Challenge
 
-## About
+This challenge was developed using:
+- Laravel
+- PHP 7.4 (but compatible with 7.3)
+- MySql
+- Docker
 
-This coding project was built using Laravel, PHP 7.3, MySql, and Docker. A homepage is displayed
-and a contact form is rendered near the bottom. Submitting a valid name, email, message, and optionally a phone number will create an inquiry which is emailed to the user and saved in the database.
+Configuration was kept to a minimal to reduce project dependencies. Queuing is configured to run sychronously and mailing jobs will print to `stderr` by default (see terminal for mail jobs).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+An `.env` file was committed for the purpose of reducing the amount of setup requied. Normally, this file shouldn't be committed for the sake of not exposing secrets.
 
-## Learning Laravel
+Bundled assets were also commited to this repository to ensure that a simple php server could run this project. See [Building Assets](##Building-Assets)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Running with Docker 
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clone and _cd_ into the project
+   ```
+   > git clone https://github.com/Syntaf/dealer_inspire.git
+   > cd dealer_inspire
+   ```
 
-## Laravel Sponsors
+2. Build the docker image and start the containers
+   ```
+   > docker-compose up
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+3. Visit http://localhost:9999/ and submit an inquiry through the contact form. Don't forget to check the terminal to see the mail being sent through `stderr`!
 
-### Premium Partners
+## Running locally
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+While Docker is recommended, to adhere to the challenge requirements one can also run this project locally.
 
-## Contributing
+1. Clone and _cd_ into the project
+   ```
+   > git clone https://github.com/Syntaf/dealer_inspire.git
+   > cd dealer_inspire
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2. Install dependencies through composer
+   ```
+   > composer install
+   ```
 
-## Code of Conduct
+3. Create a PHP server and visit http://localhost:9999/
+   ```
+   > php -S 127.0.0.1:9999 -t public
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Building Assets
 
-## Security Vulnerabilities
+Precompiled assets have been committed to this project already, but if you'd like to rebuild the assets use the following commands:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+_Note: If using docker, run `docker-compose exec app /bin/bash` before performing the following steps_
 
-## License
+1. Install frontend dependencies
+   ```
+   > npm install
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2. Build assets
+   ```
+   > npm run dev
+   ```
