@@ -68,7 +68,7 @@
                         </div>
                         <div class="col-xs-12 input-group" data-role="phone_number">
                             <label for="phone" class="pull-left">Phone Number</label>
-                            <input type="text" name="phone_number" class="form-control" />
+                            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="000-000-0000" name="phone_number" class="form-control" />
                         </div>
                         <div class="col-xs-12 text-area input-group" data-role="message">
                             <label for="message" class="pull-left">Message<sup class="text-danger">*</sup></label>
