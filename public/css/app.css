@@ -1,0 +1,46 @@
+.card {
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #fff;
+  padding: 15px;
+}
+
+.card form {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.card form input::-moz-selection, .card form textarea::-moz-selection {
+  color: white;
+  background-color: highlight;
+}
+
+.card form input::selection,
+.card form textarea::selection {
+  color: white;
+  background-color: highlight;
+}
+
+.card form .input-group {
+  margin-top: 5px;
+}
+
+.card form .input-group.has-error input,
+.card form .input-group textarea {
+  border-width: 2px;
+}
+
+.card form .btn {
+  margin-top: 15px;
+  padding: 10px 50px;
+}
+
+.card form .response-label {
+  display: none;
+  font-size: 14px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
