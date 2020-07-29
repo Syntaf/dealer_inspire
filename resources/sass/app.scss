@@ -2,13 +2,18 @@
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
-  background-color: #fff;
-  color: #000;
-  padding: 15px;
+  background-color: #000;
+  color: #fff;
+  padding: 0 15px;
 
   form {
     flex: 1;
     margin-bottom: 0;
+
+    input::selection, textarea::selection {
+      color: white;
+      background-color: highlight;
+    }
 
     .input-group {
       margin-top: 5px;
