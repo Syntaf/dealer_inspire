@@ -9,6 +9,7 @@ class Inquiry extends Model
     private const DEFAULT_LINE_SIZE = 76;
 
     protected $fillable = ['full_name', 'email', 'phone_number', 'message'];
+    protected $visible = ['full_name', 'email', 'phone_number', 'message'];
 
     public function getMessageLinesAttribute()
     {

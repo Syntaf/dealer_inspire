@@ -18,10 +18,19 @@ class InquiryController extends Controller
 
         $inquiry->fill($request->all());
         
-        if ($inquiry->save()) {
-            Mail::to($inquiry->email)
-                ->queue(new InquiryReceived($inquiry));
+        if (!$inquiry->save()) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'An unknown error occured, please try again'
+            ]);
         }
 
+        Mail::to($inquiry->email)
+            ->queue(new InquiryReceived($inquiry));
+
+        return response()->json([
+            'status' => 'success',
+            'inquiry' => $inquiry
+        ]);
     }
 }
