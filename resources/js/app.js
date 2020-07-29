@@ -31,14 +31,14 @@ class FormController
         });
     }
 
-    handleSuccess (res) {
-        console.log(res.responseJSON);
+    handleSuccess (_res) {
+        this.$form.find('[data-role="success"]').show();
     }
 
     handleFailure (res) {
         const response = res.responseJSON;
 
-        if  ('errors' in response) {
+        if ('errors' in response) {
             $.each(response.errors, this.setValidationState.bind(this));
         }
     }
