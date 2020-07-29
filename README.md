@@ -10,7 +10,7 @@ Configuration was kept to a minimal to reduce project dependencies. Queuing is c
 
 An `.env` file was committed for the purpose of reducing the amount of setup requied. Normally, this file shouldn't be committed for the sake of not exposing secrets.
 
-Bundled assets were also commited to this repository to ensure that a simple php server could run this project. See [Building Assets](##Building-Assets)
+Bundled assets were also commited to this repository to ensure that a simple php server could run this project. See [Building Assets](#Building-Assets)
 
 ## Running with Docker 
 
